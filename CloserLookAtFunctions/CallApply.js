@@ -8,7 +8,6 @@ const lufthanda = {
         console.log(`${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`)
         this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name })
     }
-
 }
 
 lufthanda.book(239, "Jonas Schmedtmann")
@@ -45,3 +44,32 @@ book.apply(swiss, flightData)
 console.log(swiss)
 
 book.call(swiss, ...flightData)
+
+// Bind Method, does not immediatley run function
+// returns a function where this is bounded to the value we pass in
+const bookEw = book.bind(eurowings)
+const boolLw = book.bind(lufthanda)
+const bookLX = book.bind(swiss)
+
+boolLw(23,"Tyler")
+bookEw(33, "Steven Williams")
+
+const bookEw23 = book.bind(eurowings, 23)
+bookEw23("Jonases Schmedtmann")
+bookEw23("Martha Cooper")
+
+// Object with event listeners
+lufthanda.planes = 300
+lufthanda.buyPlane = function () {
+    this.plane++
+    console.log(this.plane)
+    console.log(this)
+}
+
+document.querySelector(".buy").addEventListener("click", lufthanda.buyPlane.bind(lufthanda))
+
+const addTax = (rate, value) => value + value * rate
+console.log(addTax(0.10, 200))
+
+const addVAT = addTax.bind(null, 0.23)
+console.log(addVat(23))

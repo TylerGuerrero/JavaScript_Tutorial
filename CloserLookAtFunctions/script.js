@@ -2,6 +2,7 @@
 
 const bookings = []
 
+// default values
 const createBooking = function (flightNum, numPassengers = 1, price = 199 * numPassengers) {
     // numPassengers = numPassengers || 1
     // price = price || 199

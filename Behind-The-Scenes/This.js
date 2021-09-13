@@ -10,6 +10,9 @@
 // 5) function inside a method is just a regular function
 // can use arrow function cause of parent this
 
+// 6 Event Handler: this gets pointed to the element 
+// the event handler is attached to
+
 console.log(this)
 
 function calcAgeDec (birthYear) {
