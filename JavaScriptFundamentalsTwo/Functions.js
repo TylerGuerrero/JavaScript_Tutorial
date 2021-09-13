@@ -26,7 +26,7 @@ console.log(age1, age2)
 
 // Arrow function
 
-// can run them before declartion
+// cant run them before declartion
 // has access this parent scope
 // typically not hoisted but with var it is
 const calcAge3 = (birthYear) => 2037 - birthYear
